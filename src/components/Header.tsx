@@ -16,13 +16,18 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <nav className="section-container flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="font-display text-2xl tracking-wide text-foreground">
-          SHADES
+      <div className="absolute left-0 top-0 h-16 md:h-20 flex items-center pl-6 md:pl-8">
+        <Link to="/">
+          <span className="font-bold text-2xl md:text-4xl tracking-widest" style={{ fontFamily: '"Space Mono", monospace' }}>
+            SHADES
+          </span>
         </Link>
+      </div>
+
+      <nav className="section-container flex items-center h-16 md:h-20">
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-8 ml-auto">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
