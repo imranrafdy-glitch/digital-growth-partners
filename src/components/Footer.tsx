@@ -1,6 +1,28 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/lib/language";
 
 export default function Footer() {
+  const { language } = useLanguage();
+  const nav = language === "en"
+    ? [
+        { label: "Service", href: "/services" },
+        { label: "How It Works", href: "/how-it-works" },
+        { label: "About the Studio", href: "/about" },
+        { label: "Contact", href: "/contact" },
+        { label: "Legal Notice", href: "/legal-notice" },
+        { label: "Privacy Policy", href: "/privacy" },
+        { label: "Terms of Service", href: "/terms" },
+      ]
+    : [
+        { label: "Service", href: "/services" },
+        { label: "Comment ca marche", href: "/how-it-works" },
+        { label: "A propos du studio", href: "/about" },
+        { label: "Contact", href: "/contact" },
+        { label: "Mentions legales", href: "/legal-notice" },
+        { label: "Politique de confidentialite", href: "/privacy" },
+        { label: "Conditions de service", href: "/terms" },
+      ];
+
   return (
     <footer className="border-t border-border bg-primary text-primary-foreground">
       <div className="section-container py-16 md:py-20">
@@ -9,23 +31,19 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl mb-4">SH4DES</h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
-              SEO-ready brochure websites for local businesses in Luxembourg.
+              {language === "en"
+                ? "SEO-ready brochure websites for local businesses in Luxembourg."
+                : "Sites vitrines SEO pour entreprises locales au Luxembourg."}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest mb-4 text-primary-foreground/50 font-body font-medium">Navigation</h4>
+            <h4 className="text-xs uppercase tracking-widest mb-4 text-primary-foreground/50 font-body font-medium">
+              {language === "en" ? "Navigation" : "Navigation"}
+            </h4>
             <ul className="space-y-3">
-              [
-                { label: "Service", href: "/services" },
-                { label: "How It Works", href: "/how-it-works" },
-                { label: "About the Studio", href: "/about" },
-                { label: "Contact", href: "/contact" },
-                { label: "Legal Notice", href: "/legal-notice" },
-                { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms of Service", href: "/terms" },
-              ].map((link) => (
+              {nav.map((link) => (
                 <li key={link.href}>
                   <Link to={link.href} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                     {link.label}
@@ -37,7 +55,9 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs uppercase tracking-widest mb-4 text-primary-foreground/50 font-body font-medium">Contact</h4>
+            <h4 className="text-xs uppercase tracking-widest mb-4 text-primary-foreground/50 font-body font-medium">
+              {language === "en" ? "Contact" : "Contact"}
+            </h4>
             <a href="mailto:info@sh4des.com" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors">
               info@sh4des.com
             </a>

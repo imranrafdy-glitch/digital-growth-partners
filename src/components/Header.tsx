@@ -1,17 +1,28 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "@/lib/language";
 
-const navLinks = [
-  { label: "Service", href: "/services" },
-  { label: "How It Works", href: "/how-it-works" },
-  { label: "About the Studio", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+const navLinks = {
+  en: [
+    { label: "Service", href: "/services" },
+    { label: "How It Works", href: "/how-it-works" },
+    { label: "About the Studio", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ],
+  fr: [
+    { label: "Service", href: "/services" },
+    { label: "Comment ca marche", href: "/how-it-works" },
+    { label: "A propos du studio", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ],
+};
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage } = useLanguage();
+  const links = navLinks[language];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
@@ -26,7 +37,9 @@ export default function Header() {
             SH4DES
           </span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground mt-1">
-            SEO-ready websites for Luxembourg locals
+            {language === "en"
+              ? "SEO-ready websites for Luxembourg locals"
+              : "Sites vitrines SEO pour entreprises locales au Luxembourg"}
           </span>
         </Link>
       </div>
@@ -35,7 +48,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8 ml-auto">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <li key={link.href}>
               <Link
                 to={link.href}
@@ -54,8 +67,19 @@ export default function Header() {
               to="/contact"
               className="inline-flex items-center px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
             >
-              Get in touch
+              {language === "en" ? "Get in touch" : "Contact"}
             </Link>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={() => setLanguage(language === "en" ? "fr" : "en")}
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+              aria-label={language === "en" ? "Switch to French" : "Switch to English"}
+            >
+              <span>{language === "en" ? "🇫🇷" : "🇬🇧"}</span>
+              {language === "en" ? "FR" : "EN"}
+            </button>
           </li>
         </ul>
 
@@ -73,7 +97,7 @@ export default function Header() {
       {mobileOpen && (
         <div className="md:hidden bg-background border-b border-border overflow-hidden">
           <ul className="section-container py-6 space-y-4">
-            {navLinks.map((link) => (
+            {links.map((link) => (
               <li key={link.href}>
                 <Link
                   to={link.href}
@@ -94,8 +118,22 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-sm"
               >
-                Get in touch
+                {language === "en" ? "Get in touch" : "Contact"}
               </Link>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  setLanguage(language === "en" ? "fr" : "en");
+                  setMobileOpen(false);
+                }}
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground"
+                aria-label={language === "en" ? "Switch to French" : "Switch to English"}
+              >
+                <span>{language === "en" ? "🇫🇷" : "🇬🇧"}</span>
+                {language === "en" ? "FR" : "EN"}
+              </button>
             </li>
           </ul>
         </div>
