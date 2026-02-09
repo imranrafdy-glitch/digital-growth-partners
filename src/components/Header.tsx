@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Services", href: "/services" },
-  { label: "Process", href: "/process" },
-  { label: "About", href: "/about" },
+  { label: "Service", href: "/services" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "About the Studio", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -19,16 +18,15 @@ export default function Header() {
       <div className="absolute left-0 top-0 h-16 md:h-20 flex items-center pl-6 md:pl-8">
         <Link to="/" aria-label="SH4DES" className="flex flex-col">
           <span
-            className="font-bold text-2xl md:text-4xl tracking-[0.2em] text-foreground"
+            className="font-bold text-2xl md:text-4xl tracking-[0.16em] text-foreground"
             style={{
-              fontFamily: '"Press Start 2P", monospace',
-              textShadow: "0 2px 0 rgba(0,0,0,0.35), 0 0 10px rgba(56, 189, 248, 0.35)",
+              textShadow: "0 2px 0 rgba(0,0,0,0.18)",
             }}
           >
             SH4DES
           </span>
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.35em] text-muted-foreground mt-1">
-            Your digital growth partner
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground mt-1">
+            SEO-ready websites for Luxembourg locals
           </span>
         </Link>
       </div>
@@ -72,43 +70,36 @@ export default function Header() {
       </nav>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border overflow-hidden"
-          >
-            <ul className="section-container py-6 space-y-4">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className={`block text-base font-medium tracking-wide uppercase ${
-                      location.pathname === link.href
-                        ? "text-foreground"
-                        : "text-muted-foreground"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
+      {mobileOpen && (
+        <div className="md:hidden bg-background border-b border-border overflow-hidden">
+          <ul className="section-container py-6 space-y-4">
+            {navLinks.map((link) => (
+              <li key={link.href}>
                 <Link
-                  to="/contact"
+                  to={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="inline-flex items-center px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-sm"
+                  className={`block text-base font-medium tracking-wide uppercase ${
+                    location.pathname === link.href
+                      ? "text-foreground"
+                      : "text-muted-foreground"
+                  }`}
                 >
-                  Get in touch
+                  {link.label}
                 </Link>
               </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <li>
+              <Link
+                to="/contact"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center px-5 py-2.5 text-sm font-medium bg-primary text-primary-foreground rounded-sm"
+              >
+                Get in touch
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </header>
   );
 }

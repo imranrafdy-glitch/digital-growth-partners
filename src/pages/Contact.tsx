@@ -52,14 +52,17 @@ export default function Contact() {
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium mb-4">Contact</p>
             <h1 className="heading-xl mb-6">Get in touch</h1>
             <p className="body-lg mb-4">
-              For inquiries or collaborations, contact us directly at:
+              For new website requests, contact us at:
             </p>
             <a
-              href="mailto:info@shades.lu"
-              className="inline-block text-xl font-display text-foreground hover:text-accent transition-colors mb-12"
+              href="mailto:info@sh4des.com"
+              className="inline-block text-xl font-semibold text-foreground hover:text-accent transition-colors mb-12"
             >
-              info@shades.lu
+              info@sh4des.com
             </a>
+            <p className="body-md mb-10">
+              Response time: within 24 hours. You will receive a reply with three scope questions.
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.15}>
