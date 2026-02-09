@@ -1,11 +1,5 @@
-name = "digital-growth-partners"
-type = "javascript"
-compatibility_date = "2024-01-01"
+name = "sh4des"
+compatibility_date = "2026-02-09"
 
-[build]
-command = "npm run build"
-cwd = "./"
-watch_paths = ["src/**/*.ts", "src/**/*.tsx"]
-
-[build.upload]
-format = "service-worker"
+[assets]
+directory = "./dist"
