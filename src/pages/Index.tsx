@@ -54,7 +54,7 @@ export default function Index() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="body-lg max-w-xl mb-10">
-                I work with local and service-based businesses to build a clear digital presence, attract the right audience, and generate measurable results.
+                We work with local and service-based businesses to build a clear digital presence, attract the right audience, and generate measurable results.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
@@ -91,7 +91,7 @@ export default function Index() {
               Strategy, execution, measurement
             </h2>
             <p className="body-lg max-w-2xl mb-16">
-              Digital marketing works when every decision has a reason. I combine strategic thinking with hands-on execution and transparent reporting to deliver outcomes you can see and understand.
+              Digital marketing works when every decision has a reason. We combine strategic thinking with hands-on execution and transparent reporting to deliver outcomes you can see and understand.
             </p>
           </FadeIn>
 
@@ -117,7 +117,7 @@ export default function Index() {
               Services
             </p>
             <h2 className="heading-lg mb-16 max-w-lg">
-              What I can help you with
+              What we can help you with
             </h2>
           </FadeIn>
 
@@ -155,7 +155,7 @@ export default function Index() {
               href="mailto:info@shades.lu"
               className="inline-flex items-center px-7 py-3.5 text-sm font-medium bg-primary-foreground text-primary rounded-sm hover:opacity-90 transition-opacity"
             >
-              Contact me at info@shades.lu
+              Contact us at info@shades.lu
             </a>
           </FadeIn>
         </div>

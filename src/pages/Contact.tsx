@@ -20,7 +20,7 @@ export default function Contact() {
             <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium mb-4">Contact</p>
             <h1 className="heading-xl mb-6">Get in touch</h1>
             <p className="body-lg mb-4">
-              For inquiries or collaborations, contact me directly at:
+              For inquiries or collaborations, contact us directly at:
             </p>
             <a
               href="mailto:info@shades.lu"
@@ -35,7 +35,7 @@ export default function Contact() {
               <div className="p-10 border border-border rounded-sm text-center">
                 <h3 className="font-display text-2xl mb-3 text-foreground">Message sent</h3>
                 <p className="body-md">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
+                  Thank you for reaching out. We'll get back to you as soon as possible.
                 </p>
               </div>
             ) : (
@@ -79,7 +79,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="w-full px-4 py-3 bg-card border border-border rounded-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-foreground/20 transition-shadow resize-none"
-                    placeholder="Tell me about your business and objectives…"
+                    placeholder="Tell us about your business and objectives…"
                   />
                 </div>
                 <button
