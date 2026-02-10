@@ -37,9 +37,7 @@ export default function Header() {
             SH4DES
           </span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground mt-1">
-            {language === "en"
-              ? "SEO-ready websites for Luxembourg locals"
-              : "Sites vitrines SEO pour entreprises locales au Luxembourg"}
+            -your digital growth partner-
           </span>
         </Link>
       </div>
