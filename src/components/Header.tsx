@@ -37,7 +37,7 @@ export default function Header() {
             SH4DES
           </span>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground mt-1">
-            -your digital growth partner-
+            -your digital SH4DES growth partner-
           </span>
         </Link>
       </div>
