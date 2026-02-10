@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/language";
-
-const THEME_KEY = "sh4des-theme";
 
 const navLinks = {
   en: [
@@ -25,39 +23,25 @@ export default function Header() {
   const location = useLocation();
   const { language, setLanguage } = useLanguage();
   const links = navLinks[language];
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    const stored = localStorage.getItem(THEME_KEY);
-    if (stored === "dark" || stored === "light") {
-      setTheme(stored);
-      document.documentElement.classList.toggle("dark", stored === "dark");
-    }
-  }, []);
-
-  const handleToggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem(THEME_KEY, nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="absolute left-0 top-0 h-16 md:h-20 flex items-center pl-6 md:pl-8">
-        <Link to="/" aria-label="SH4DES" className="flex flex-col items-center text-center">
-          <span
+        <div className="flex flex-col items-center text-center">
+          <Link
+            to="/"
+            aria-label="SH4DES"
             className="font-bold text-2xl md:text-4xl tracking-[0.16em] text-foreground"
             style={{
               textShadow: "0 2px 0 rgba(0,0,0,0.18)",
             }}
           >
             SH4DES
-          </span>
+          </Link>
           <span className="text-[10px] md:text-xs uppercase tracking-[0.28em] text-muted-foreground mt-1">
             -your digital SH4DES growth partner-
           </span>
-        </Link>
+        </div>
       </div>
 
       <nav className="section-container flex items-center h-16 md:h-20">
@@ -95,16 +79,6 @@ export default function Header() {
             >
               <span>{language === "en" ? "🇫🇷" : "🇬🇧"}</span>
               {language === "en" ? "FR" : "EN"}
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              onClick={handleToggleTheme}
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Toggle color mode"
-            >
-              {theme === "dark" ? "Light" : "Dark"}
             </button>
           </li>
         </ul>
@@ -159,19 +133,6 @@ export default function Header() {
               >
                 <span>{language === "en" ? "🇫🇷" : "🇬🇧"}</span>
                 {language === "en" ? "FR" : "EN"}
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                onClick={() => {
-                  handleToggleTheme();
-                  setMobileOpen(false);
-                }}
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground"
-                aria-label="Toggle color mode"
-              >
-                {theme === "dark" ? "Light" : "Dark"}
               </button>
             </li>
           </ul>
