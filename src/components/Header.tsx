@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/language";
+
+const THEME_KEY = "sh4des-theme";
 
 const navLinks = {
   en: [
@@ -23,6 +25,22 @@ export default function Header() {
   const location = useLocation();
   const { language, setLanguage } = useLanguage();
   const links = navLinks[language];
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === "dark" || stored === "light") {
+      setTheme(stored);
+      document.documentElement.classList.toggle("dark", stored === "dark");
+    }
+  }, []);
+
+  const handleToggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
@@ -79,6 +97,16 @@ export default function Header() {
               {language === "en" ? "FR" : "EN"}
             </button>
           </li>
+          <li>
+            <button
+              type="button"
+              onClick={handleToggleTheme}
+              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Toggle color mode"
+            >
+              {theme === "dark" ? "Light" : "Dark"}
+            </button>
+          </li>
         </ul>
 
         {/* Mobile toggle */}
@@ -131,6 +159,19 @@ export default function Header() {
               >
                 <span>{language === "en" ? "🇫🇷" : "🇬🇧"}</span>
                 {language === "en" ? "FR" : "EN"}
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                onClick={() => {
+                  handleToggleTheme();
+                  setMobileOpen(false);
+                }}
+                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground"
+                aria-label="Toggle color mode"
+              >
+                {theme === "dark" ? "Light" : "Dark"}
               </button>
             </li>
           </ul>
