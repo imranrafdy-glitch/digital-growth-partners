@@ -142,7 +142,7 @@ export default function Index() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-border rounded-sm p-6 space-y-4">
                 <img
-                  src="/concept-physio.svg"
+                  src="/concept-physio.png"
                   alt="Concept preview for a local physio clinic website"
                   className="w-full h-40 object-cover rounded-sm border border-border"
                 />
@@ -153,7 +153,7 @@ export default function Index() {
               </div>
               <div className="border border-border rounded-sm p-6 space-y-4">
                 <img
-                  src="/concept-bakery.svg"
+                  src="/concept-bakery.png"
                   alt="Concept preview for an artisan bakery website"
                   className="w-full h-40 object-cover rounded-sm border border-border"
                 />
