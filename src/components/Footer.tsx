@@ -32,8 +32,8 @@ export default function Footer() {
             <h3 className="text-2xl mb-4">SH4DES</h3>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
               {language === "en"
-                ? "SEO-ready brochure websites for local businesses in Luxembourg."
-                : "Sites vitrines SEO pour entreprises locales au Luxembourg."}
+                ? "Fast brochure websites for local businesses in Luxembourg."
+                : "Sites vitrines rapides pour entreprises locales au Luxembourg."}
             </p>
           </div>
 

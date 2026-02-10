@@ -4,7 +4,7 @@ import { useLanguage } from "@/lib/language";
 const copy = {
   en: {
     kicker: "Service",
-    title: "SEO-ready brochure websites",
+    title: "Fast brochure websites",
     intro: "One focused offer for local businesses in Luxembourg. We build a clean, fast website that explains your business and makes it easy to contact you.",
     scopeTitle: "Scope",
     scopeIntro: "The scope is defined in writing before any build starts. This avoids ambiguity and keeps delivery predictable.",
@@ -14,7 +14,7 @@ const copy = {
       "Single-page or multi-section layout",
       "Content structure and page hierarchy",
       "Contact flow (email, map, or booking link)",
-      "On-page SEO metadata",
+      "Metadata and indexing setup",
     ],
     excluded: [
       "Ongoing marketing management",
@@ -30,7 +30,7 @@ const copy = {
   },
   fr: {
     kicker: "Service",
-    title: "Sites vitrines SEO",
+    title: "Sites vitrines rapides",
     intro: "Un seul service pour les entreprises locales au Luxembourg. Nous construisons un site propre et rapide qui explique votre activite et facilite le contact.",
     scopeTitle: "Perimetre",
     scopeIntro: "Le perimetre est defini par ecrit avant de commencer. Cela evite les ambiguities et rend la livraison previsible.",
@@ -40,7 +40,7 @@ const copy = {
       "Mise en page une ou plusieurs sections",
       "Structure de contenu et hierarchie",
       "Parcours de contact (email, carte ou lien de reservation)",
-      "Metadonnees SEO sur la page",
+      "Metadonnees et indexation",
     ],
     excluded: [
       "Gestion marketing continue",

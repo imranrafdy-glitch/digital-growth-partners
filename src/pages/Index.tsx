@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/language";
 const copy = {
   en: {
     kicker: "Website Studio • Luxembourg",
-    headline: "We design and deploy SEO-ready brochure websites for local businesses in Luxembourg.",
+    headline: "We design and deploy fast brochure websites for local businesses in Luxembourg.",
     intro: "One clear service. One clear outcome: a fast, structured website that presents your business and makes it easy to contact you.",
     ctaPrimary: "Start a conversation",
     ctaSecondary: "See the service",
@@ -16,7 +16,7 @@ const copy = {
       "Single-page or multi-section layout based on scope",
       "Copy structure, content layout, and contact flow",
       "Mobile-first build with clean performance budget",
-      "SEO-ready metadata and indexing setup",
+      "Metadata and indexing setup",
     ],
     workKicker: "Work samples",
     workTitle: "Concept projects",
@@ -31,7 +31,7 @@ const copy = {
   },
   fr: {
     kicker: "Studio web • Luxembourg",
-    headline: "Nous concevons et deployons des sites vitrines SEO pour les entreprises locales au Luxembourg.",
+    headline: "Nous concevons et deployons des sites vitrines rapides pour les entreprises locales au Luxembourg.",
     intro: "Un seul service, un seul objectif: un site rapide et structure qui presente votre activite et facilite le contact.",
     ctaPrimary: "Demarrer un echange",
     ctaSecondary: "Voir le service",
@@ -41,7 +41,7 @@ const copy = {
       "Mise en page une ou plusieurs sections selon le scope",
       "Structure de contenu, mise en page et parcours de contact",
       "Site mobile-first avec budget performance clair",
-      "Metadonnees SEO et indexation pretes",
+      "Metadonnees et indexation pretes",
     ],
     workKicker: "Exemples",
     workTitle: "Projets concept",
@@ -140,13 +140,27 @@ export default function Index() {
           </FadeIn>
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="border border-border rounded-sm p-6">
-                <h3 className="text-base font-semibold mb-2">{content.conceptOneTitle}</h3>
-                <p className="text-sm text-muted-foreground">{content.conceptOneText}</p>
+              <div className="border border-border rounded-sm p-6 space-y-4">
+                <img
+                  src="/concept-physio.svg"
+                  alt="Concept preview for a local physio clinic website"
+                  className="w-full h-40 object-cover rounded-sm border border-border"
+                />
+                <div>
+                  <h3 className="text-base font-semibold mb-2">{content.conceptOneTitle}</h3>
+                  <p className="text-sm text-muted-foreground">{content.conceptOneText}</p>
+                </div>
               </div>
-              <div className="border border-border rounded-sm p-6">
-                <h3 className="text-base font-semibold mb-2">{content.conceptTwoTitle}</h3>
-                <p className="text-sm text-muted-foreground">{content.conceptTwoText}</p>
+              <div className="border border-border rounded-sm p-6 space-y-4">
+                <img
+                  src="/concept-bakery.svg"
+                  alt="Concept preview for an artisan bakery website"
+                  className="w-full h-40 object-cover rounded-sm border border-border"
+                />
+                <div>
+                  <h3 className="text-base font-semibold mb-2">{content.conceptTwoTitle}</h3>
+                  <p className="text-sm text-muted-foreground">{content.conceptTwoText}</p>
+                </div>
               </div>
             </div>
           </FadeIn>
