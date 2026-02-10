@@ -14,6 +14,10 @@ import NotFound from "./pages/NotFound";
 import LegalNotice from "./pages/LegalNotice";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import WorkPhysio from "./pages/WorkPhysio";
+import WorkBakery from "./pages/WorkBakery";
+import ConceptPhysio from "./pages/ConceptPhysio";
+import ConceptBakery from "./pages/ConceptBakery";
 
 const queryClient = new QueryClient();
 
@@ -31,9 +35,13 @@ const App = () => (
               <Route path="/how-it-works" element={<HowItWorks />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/work/physio" element={<WorkPhysio />} />
+              <Route path="/work/bakery" element={<WorkBakery />} />
               <Route path="/legal-notice" element={<LegalNotice />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
               <Route path="/terms" element={<TermsOfService />} />
+              <Route path="/concepts/physio" element={<ConceptPhysio />} />
+              <Route path="/concepts/bakery" element={<ConceptBakery />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

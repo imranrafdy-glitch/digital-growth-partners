@@ -140,28 +140,34 @@ export default function Index() {
           </FadeIn>
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="border border-border rounded-sm p-6 space-y-4">
-                <img
-                  src="/concept-physio.png"
-                  alt="Concept preview for a local physio clinic website"
-                  className="w-full h-40 object-cover rounded-sm border border-border"
-                />
-                <div>
-                  <h3 className="text-base font-semibold mb-2">{content.conceptOneTitle}</h3>
-                  <p className="text-sm text-muted-foreground">{content.conceptOneText}</p>
-                </div>
-              </div>
-              <div className="border border-border rounded-sm p-6 space-y-4">
-                <img
-                  src="/concept-bakery.png"
-                  alt="Concept preview for an artisan bakery website"
-                  className="w-full h-40 object-cover rounded-sm border border-border"
-                />
-                <div>
-                  <h3 className="text-base font-semibold mb-2">{content.conceptTwoTitle}</h3>
-                  <p className="text-sm text-muted-foreground">{content.conceptTwoText}</p>
-                </div>
-              </div>
+                  <Link
+                    to="/work/physio"
+                    className="border border-border rounded-sm p-6 space-y-4 hover:border-foreground/40 transition-colors"
+                  >
+                    <img
+                      src="/concept-physio.png"
+                      alt="Concept preview for a local physio clinic website"
+                      className="w-full h-40 object-cover rounded-sm border border-border"
+                    />
+                    <div>
+                      <h3 className="text-base font-semibold mb-2">{content.conceptOneTitle}</h3>
+                      <p className="text-sm text-muted-foreground">{content.conceptOneText}</p>
+                    </div>
+                  </Link>
+                  <Link
+                    to="/work/bakery"
+                    className="border border-border rounded-sm p-6 space-y-4 hover:border-foreground/40 transition-colors"
+                  >
+                    <img
+                      src="/concept-bakery.png"
+                      alt="Concept preview for an artisan bakery website"
+                      className="w-full h-40 object-cover rounded-sm border border-border"
+                    />
+                    <div>
+                      <h3 className="text-base font-semibold mb-2">{content.conceptTwoTitle}</h3>
+                      <p className="text-sm text-muted-foreground">{content.conceptTwoText}</p>
+                    </div>
+                  </Link>
             </div>
           </FadeIn>
         </div>
