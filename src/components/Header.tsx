@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="absolute left-0 top-0 h-16 md:h-20 flex items-center pl-6 md:pl-8">
-        <Link to="/" aria-label="SH4DES" className="flex flex-col">
+        <Link to="/" aria-label="SH4DES" className="flex flex-col items-center text-center">
           <span
             className="font-bold text-2xl md:text-4xl tracking-[0.16em] text-foreground"
             style={{
