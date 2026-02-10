@@ -6,7 +6,7 @@ import { useLanguage } from "@/lib/language";
 const copy = {
   en: {
     kicker: "Website Studio • Luxembourg",
-    headline: "We design and deploy fast brochure websites for local businesses in Luxembourg.",
+    headline: "We design and deploy websites for local businesses in Luxembourg.",
     intro: "One clear service. One clear outcome: a fast, structured website that presents your business and makes it easy to contact you.",
     ctaPrimary: "Start a conversation",
     ctaSecondary: "See the service",
